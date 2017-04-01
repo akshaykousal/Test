@@ -1,0 +1,149 @@
+<html>
+	<head>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+
+			#myInput {
+			  background-position: 10px 10px;
+			  background-color:#F4F6F6;
+			  background-repeat: no-repeat;
+			  width: 50%;
+			  font-size: 12px;
+			  border: 1px solid #ddd;
+			  margin-bottom: 12px;
+			}
+
+			#myInput1 {
+			  background-position: 10px 10px;
+			  background-color:#F4F6F6;
+			  background-repeat: no-repeat;
+			  width: 50%;
+			  font-size: 12px;
+			  border: 1px solid #ddd;
+			  margin-bottom: 12px;
+			}
+
+			#myTable {
+			  width: 100%;
+			  border: 1px;
+			  font-size: 18px;
+			  }
+
+			#myTable th{
+			  background-color:#D4E6F1;
+			  text-align: center;
+			  padding: 2px;
+			}
+
+			#myTable td {
+			  text-align: center;
+			  padding: 2px;
+			}
+
+			#myTable tr {
+			  border-bottom: 1px solid #ddd;
+			}
+
+			#myTable tr.header, #myTable tr:hover {
+			  background-color: #f1f1f1;
+			}
+		</style>
+		<title>Automation Execution Report</title>
+	</head>
+
+	<body bgcolor=#FFFFFF topmargin="0" leftmargin="0" rightmargin="0" marginwidth="0" marginheight="0">
+		<table width="100%" cellspacing="0" cellpadding="2" border="0" bgcolor="#bbbbbb">
+			<tr>
+			   <td class="topbar" align="left" valign="middle">&nbsp; <b>Automation Execution Report</b></td>
+			</tr>
+		</table>
+		
+		<blockquote>
+
+			<p><table cellpadding=3><tr><td><h3>Summary</h3></tr></td></table>
+
+			<TABLE width=15% BORDER=3 CELLPADDING=1 CELLSPACING=1>
+				<TR>
+				   <TD>Environment</TD>
+				   <TD>QA</TD>
+				</TR>
+				<TR>
+				   <TD>Total Tests</TD>
+				   <TD>3</TD>
+				</TR>
+				<TR>
+				   <TD><font color="Green">Pass</font></TD>
+				   <TD><font color="Green">3</font></TD>
+				</TR>
+				<TR>
+				   <TD><font color="Red">Fail</font></TD>
+				   <TD><font color="Red">0</font></TD><font>
+				</TR>
+				<TR>
+				   <TD><font color=#FFBF00>No Run</font></TD>
+				   <TD><font color=#FFBF00>0</font></TD>
+				</TR>
+			</TABLE>
+
+			<p><table cellpadding=3><tr><td><h3>Execution Report</h3></tr></td></table>
+
+			<TABLE id="myTable" width=95% BORDER=3 CELLPADDING=1 CELLSPACING=1>
+			<TR background-color= #AEB6BF>
+			   <TH style="width:25%;">Test Case Name <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter by Test Case" title="Filter Test Case"> </TH>
+			   <TH style="width:08%;">Step</TH>
+			   <TH style="width:25%;">Step Description</TH>
+			   <TH style="width:27%;">Comments</TH>
+			   <TH style="width:15%;">Result <input type="text" id="myInput1" onkeyup="myFunction1()" placeholder="Filter by Result" title="Filter Result"> </TH>
+			</TR>
+			<TR><TD>Login_OK</TD><TD>1</TD><TD>sb_LoginApp,Akshay;Mercury</TD><TD>Login Successfull<br>1/11/2017 2:14:14 AM</TD><TD>Pass</TD></TR>
+<TR><TD>Login_OK</TD><TD>2</TD><TD>sb_Close</TD><TD>Application Closed Successfully<br>1/11/2017 2:14:35 AM</TD><TD>Pass</TD></TR>
+<TR><TD>Login_Cancel</TD><TD>1</TD><TD>sb_LoginApp,Akshay;Mercury;Cancel</TD><TD>As Expected application did not launch on clicking Cancel Button<br>1/11/2017 2:14:46 AM</TD><TD>Pass</TD></TR>
+<TR><TD>Login_Cancel</TD><TD>2</TD><TD>sb_Close</TD><TD>Application Closed Successfully<br>1/11/2017 2:15:47 AM</TD><TD>Pass</TD></TR>
+<TR><TD>Login_Help</TD><TD>1</TD><TD>sb_LoginApp,Akshay;Mercury;Help</TD><TD>As Expected Help Dialog opened successfully<br>1/11/2017 2:15:48 AM</TD><TD>Pass</TD></TR>
+<TR><TD>Login_Help</TD><TD>2</TD><TD>sb_Close</TD><TD>Application Closed Successfully<br>1/11/2017 2:16:50 AM</TD><TD>Pass</TD></TR>
+
+			</TABLE>
+
+		</blockquote>
+
+		<script>
+		function myFunction() {
+		  var input, filter, table, tr, td, i;
+		  input = document.getElementById("myInput");
+		  filter = input.value.toUpperCase();
+		  table = document.getElementById("myTable");
+		  tr = table.getElementsByTagName("tr");
+		  for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[0];
+			if (td) {
+			  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			  } else {
+				tr[i].style.display = "none";
+			  }
+			}       
+		  }
+		}
+		function myFunction1() {
+		  var input, filter, table, tr, td, i;
+		  input = document.getElementById("myInput1");
+		  filter = input.value.toUpperCase();
+		  table = document.getElementById("myTable");
+		  tr = table.getElementsByTagName("tr");
+		  for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[4];
+			if (td) {
+			  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			  } else {
+				tr[i].style.display = "none";
+			  }
+			}       
+		  }
+		}
+		</script>
+
+	</body>
+</html>
