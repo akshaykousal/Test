@@ -1,0 +1,15 @@
+Copy Artifact Plugin
+Dashboard View Plugin
+Discard Old Build Plugin
+Email Extension Plugin
+Extra Columns Plugin
+Flexible Publish Plugin
+HP Application Automation Tools Plugin
+Test Results Analyzer Plugin
+Time Stamper Plugin
+Workspace Cleanup Plugin
+
+cscript "C:\Users\Akshay\Desktop\QTP-AOM.vbs"
+
+https://sumeetkushwah.com/2015/03/24/implementing-ci-using-jenkins-and-uft/
+http://www.testautomationguru.com/executing-qtpuft-scripts-using-jenkins/
